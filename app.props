@@ -1,0 +1,9 @@
+title=HH4 B
+photos-dir=photos
+fullscreen=true
+ending-text=BUKATU DUZUE,\nZORIONAK!
+ending-text.x-pos-percentage=25
+ending-text.y-pos-percentage=70
+applause.show-time=2
+applause.start-scale=0.5
+applause.end-scale=1.2

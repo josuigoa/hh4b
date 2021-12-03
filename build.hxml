@@ -1,0 +1,15 @@
+-cp src
+
+-lib heaps
+-lib hlsdl
+-lib appropos
+
+-D no-deprecation-warnings
+-D dce=full
+-D heaps_enable_hl_mp3
+-D windowSize=1024x768
+
+-hl hh4b.hl
+
+-main Main
+# -debug
