@@ -1,0 +1,11 @@
+{
+	"name": "hh4b",
+	"window": {
+		"title": "hh4b",
+		"width": 1024,
+		"height": 800,
+		"show": true
+	},
+	"main": "app.html",
+	"js-flags": "--expose-gc"
+}

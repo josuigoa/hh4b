@@ -1,15 +1,16 @@
 -cp src
+-cp libs
 
 -lib heaps
--lib hlsdl
 -lib appropos
+-lib hxnodejs
+-lib hx3compat
+-lib stb_ogg_sound
 
 -D no-deprecation-warnings
 -D dce=full
--D heaps_enable_hl_mp3
--D windowSize=1024x768
 
--hl hh4b.hl
+-js bin/game.js
 
 -main App
 # -debug

@@ -1,4 +1,3 @@
-import appropos.Appropos;
 import h2d.Bitmap;
 import h2d.Flow;
 import h2d.Tile;
@@ -38,7 +37,6 @@ class Main extends hxd.App {
 	@:v('title:TITLE')
 	var title:String;
 
-	@:v('photos-dir:photos')
 	var photosDir:String;
 
 	@:v('ending-text:Success')
@@ -66,8 +64,6 @@ class Main extends hxd.App {
 	static var inst:Main;
 
 	override function init() {
-		Appropos.init();
-
 		inst = this;
 
 		h3d.Engine.getCurrent().backgroundColor = 0xff912691;
@@ -114,13 +110,7 @@ class Main extends hxd.App {
 		var tf = new h2d.Text(font, titleFlow);
 		tf.text = title.replace("\\n", "\n");
 
-		tiles = [
-			for (anyRes in hxd.Res.loader.dir(photosDir))
-				{
-					name: haxe.io.Path.withoutExtension(anyRes.name).toUpperCase(),
-					tile: anyRes.toTile()
-				}
-		];
+		tiles = App.loadPhotos();
 
 		for (t in tiles)
 			t.tile.scaleToSize(w * .3, w * .3);
@@ -217,6 +207,8 @@ class Main extends hxd.App {
 		next();
 
 		onResize();
+
+		App.maximize();
 	}
 
 	override function onResize() {
@@ -376,10 +368,5 @@ class Main extends hxd.App {
 			engine.fullScreen = isFullscreen;
 			#end
 		}
-	}
-
-	static function main() {
-		hxd.Res.initLocal();
-		new Main();
 	}
 }
